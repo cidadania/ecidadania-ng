@@ -1,10 +1,8 @@
 # ecidadania-ng
 
-Current version: 0.2.0 alpha
-
-Django version: 1.7.4
-
-Python version: 3.4.x
+* Current version: 0.2.0 alpha
+* Django version: 1.7.4
+* Python version: 3.4.x
 
 
 ecidadania-ng (ecidadania new generation) is a project to develop an up to date
@@ -23,11 +21,11 @@ If you need any help feel free to contact oscar.carballal@clione.io
 
 ## Status
 
-Row-level permissions: 100%
-Accounts system: 60% (now managed by allauth)
-Spaces management: 0%
-Debates system: 0%
-Voting system: 0%
-News system: 0%
-Calendar: 0%
-Theming system: 0%
+* Row-level permissions: 100%
+* Accounts system: 60% (now managed by allauth)
+* Spaces management: 0%
+* Debates system: 0%
+* Voting system: 0%
+* News system: 0%
+* Calendar: 0%
+* Theming system: 0%
