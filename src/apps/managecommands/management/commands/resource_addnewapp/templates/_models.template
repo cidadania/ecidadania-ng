@@ -1,0 +1,12 @@
+from django.db import models
+from django.utils.translation import ugettext as _
+
+
+class $MODELNAME(models.Model):
+    class Meta:
+        verbose_name = _('$MODELNAME')
+        verbose_name_plural = _('${MODELNAME}s')
+
+    def __unicode__(self):
+        pass
+    

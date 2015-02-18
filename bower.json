@@ -1,0 +1,10 @@
+{
+    "name": "{{ project_name }}",
+    "private": true,
+    "dependencies": {
+        "modernizr":"latest",
+        "jquery":"latest",
+        "foundation":"latest"
+    },
+    "devDependencies": {}
+}

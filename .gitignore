@@ -1,0 +1,78 @@
+*.py[cod]
+
+# Avoid the development settings
+**/defaults.py
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+#**/development.py
+
+# Frontend scripts
+scripts/bower_components
+scripts/node_modules
+npm-debug.log
+
+src/tipx/db.sqlite3
+
+src/tipx/django.log
+
+*.scssc
+
+node_modules/*
+src/htdocs/gruntbuild/*
+src/htdocs/media
+src/htdocs/static/admin
+src/htdocs/static/bower_components
+src/htdocs/static/css
+src/htdocs/static/django_extensions
+src/htdocs/static/facebook
+src/htdocs/static/font.ttf
+src/htdocs/static/js
+src/htdocs/static/tiny_mce
+src/htdocs/static/yawd-admin
+src/tipx/django.log.*
+.tmp/*
+htdocs/
+
+*.sublime-workspace
+*.sublime-project
+
+src/htdocs/static/*.png
+src/htdocs/static/*.jpg
+src/htdocs/static/*.svg
+src/htdocs/static/*.psd
+src/htdocs/static/font-icons/
+src/htdocs/static/rq/
+src/htdocs/static/themes/

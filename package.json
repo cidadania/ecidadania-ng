@@ -1,0 +1,46 @@
+{
+  "name": "project_name",
+  "description": "",
+  "keywords": [],
+  "version": "0.1.0",
+  "project_paths": {
+    "project_folder": "frontend/",
+    "bower_folder": "bower_components/"
+  },
+  "dest_paths": {
+    "js": "../htdocs/build_output/js/",
+    "css": "../htdocs/build_output/css/",
+    "fonts": "../htdocs/build_output/css/fonts/",
+    "images": "../htdocs/build_output/images/"
+  },
+  "src_paths": {
+    "scss": "frontend/scss/",
+    "js": "frontend/js/",
+    "fonts": "frontend/fonts/",
+    "images": "frontend/images/"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-docco": "~0.3.3"
+  },
+  "devDependencies":{},
+  "author": "",
+  "contributors": [],
+  "licence": "closed-source",
+  "readmeFilename": "Readme.md",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "Gruntfile.js"
+}

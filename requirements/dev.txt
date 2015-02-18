@@ -1,0 +1,3 @@
+-r common.txt
+git+git://github.com/kaleidos/django-sampledatahelper.git
+django-debug-toolbar

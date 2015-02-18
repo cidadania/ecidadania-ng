@@ -1,0 +1,6 @@
+from django.shortcuts import render
+
+def ${VIEWNAME}(request):
+	template = '${TEMPLATENAME}.html'
+
+	return render(request, template, {})

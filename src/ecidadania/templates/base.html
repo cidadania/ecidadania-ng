@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head itemscope itemtype="http://schema.org/WebPage">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1">
+	
+	{% with '' as title and '' as description and '' as keywords and '' as social_image and request.build_absolute_uri as site_url %}
+	    
+    <title>{{title}}</title>
+    <meta name="description" content=" {{description}} " />
+    <meta name="keywords" content=" {{keywords}} " />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name " content=" {{title}} ">
+    <meta itemprop="description " content=" {{description}} ">
+    <meta itemprop="image " content=" {{social_image}} ">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card " content=" {{description}} ">
+    <meta name="twitter:site " content=" ">	{% comment %} @publisher_handle {% endcomment %}
+    <meta name="twitter:title " content=" {{title}} ">
+    <meta name="twitter:description " content=" {{description}} "> {% comment %} Page description less than 200 characters {% endcomment %}
+    <meta name="twitter:creator " content=""> {% comment %} @publisher_handle {% endcomment %}
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src " content=" {{social_image}} ">
+
+    <!-- Open Graph data -->
+    <meta property="og:title " content=" {{title}} " />
+    <meta property="og:type " content="  " />
+    <meta property="og:url " content=" {{site_url}} " /> {% comment %} @publisher_handle {% endcomment %}
+    <meta property="og:image " content=" {{social_image}} " />
+    <meta property="og:description " content=" {{description}} " />
+    <meta property="og:site_name " content="  " />
+    <meta property="fb:admins " content="Facebook numberic ID " />
+    
+	{% comment %}
+    <!-- Additional Open Graph meta
+    <meta property="article:published_time " content="  " />
+    <meta property="article:modified_time " content="  " />
+    <meta property="article:section " content="  " />
+    <meta property="article:tag " content="  " />-->
+	{% endcomment %}
+
+	{% endwith %}
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}" type="text/css" />
+	
+	<!-- Header JS -->
+	<script src="{% static 'js/modernizr.min.js' %}"></script>
+	{% block headerjs %}{% endblock headerjs %}
+
+</head>
+
+<body>
+	{% block base_content %}
+	{% endblock base_content %}
+
+	<!-- Footer JS -->
+	<script src="{% static 'js/app.js' %}"></script>
+	{% block footerjs %}{% endblock footerjs %}
+
+</body>
+
+</html>

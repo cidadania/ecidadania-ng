@@ -1,0 +1,2 @@
+-r common.txt
+fabric  # Installs fabric for automated deployments

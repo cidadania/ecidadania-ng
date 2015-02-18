@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Spaces list" %}{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="span12">
+            <h3>{% trans "Spaces list" %}</h3>
+            
+            <ul class="nav nav-tabs">
+                {% if not request.user.is_anonymous %}
+                    <li class="active">
+                        <a href="#mine" data-toggle="tab">{% trans "My spaces" %}</a>
+                    </li>
+                {% endif %}
+                <li {% if request.user.is_anonymous %}class="active"{% endif %}>
+                    <a href="#all" data-toggle="tab">{% trans "All spaces" %}</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                {% if not request.user.is_anonymous %}
+                    <div class="tab-pane active" id="mine">
+                        {% for space in object_list %}
+                            <div id="spaceitem">
+                                <p class="spacetitle"><a href="{{ space.get_absolute_url }}">{{ space.name }}</a></p>
+                                <p class="spacedesc">{{ space.description|removetags:"p"|safe }}</p>
+                            </div>
+                        {% empty %}
+                            <p>{% trans "There are no public spaces or spaces you are registered to" %}.</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="tab-pane {% if request.user.is_anonymous %}active{% endif %}" id="all">
+                    {% for space in public_spaces %}
+                        <div id="spaceitem">
+                            <p class="spacetitle"><a href="{{ space.get_absolute_url }}">{{ space.name }}</a></p>
+                            <p class="spacedesc">{{ space.description|removetags:"p"|safe }}</p>
+                        </div>
+                    {% empty %}
+                        <p>{% trans "There are no public spaces." %}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <hr />
+            {% if is_paginated %}
+            <div class="pagination">
+                <span class="page-links">
+                    {% if page_obj.has_previous %}
+                        <a href="{% url 'list-spaces' %}?page={{ page_obj.previous_page_number }}">&laquo; {% trans "previous" %} | </a>
+                    {% endif %}
+                    <span class="page-current">
+                        {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="{% url 'list-spaces' get_place.url %}?page={{ page_obj.next_page_number }}"> | {% trans "next" %} &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %} 
+            <a href="{% url 'site-index' %}" class="btn btn-small">&laquo; {% trans "Go back" %}</a>
+        </div>
+    </div>
+
+{% endblock %}
+
